@@ -5,11 +5,11 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
-        
+
 html, body {
     scroll-behavior: smooth;
 }
-        
+
 header {
     background-color: #040404;
     color: #fff;
@@ -17,7 +17,7 @@ header {
     text-align: center;
     width: 100%;
 }
-        
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -26,7 +26,7 @@ nav {
     position: fixed;
     width: 100%;
     top: 0;
-    left:0;
+    left: 0;
     z-index: 1;
     background: linear-gradient(to right, #040404, #333333);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -41,7 +41,7 @@ nav {
 .nav-bar-content img {
     height: 50px;
     max-width: 100%;
-    margin: 10px; 
+    margin: 10px;
 }
 
 .nav-bar-content ul {
@@ -84,174 +84,173 @@ nav {
 .nav-bar-content li a:hover::before {
     transform: scaleX(1);
 }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            position: relative;
-            top: 50px;
-        }
-        
-        h1, h2 {
-            color: #333;
-        }
-        
-        p {
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        section {
-            margin-top: 50px;
-            margin-bottom: 50px;
-            scroll-margin-top: 130px;
-        }
 
-        #Shirts {
-            margin-bottom: 100px;
-        }
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    top: 50px;
+}
 
-        .hits-albums-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+h1, h2 {
+    color: #333;
+}
 
-        .shirts-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .product {
-            display: inline-block;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px;
-            padding: 10px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-            width: 250px;
-            box-sizing: border-box;
-        }
-        
-        .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        
-        .product img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
+p {
+    line-height: 1.6;
+    color: #333;
+}
 
-        .product-details {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-        
-        .product .album-name {
-            margin-bottom: 20px;
-        }
-        
-        .product .btn {
-            padding: 10px 20px;
-            background-color: #d7272f;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin: 5px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .product .btn:hover {
-            background-color: #bf222a;
-        }
-        
-        #quote {
-            margin: 20px 0;
-            padding: 20px;
-            border-left: 5px solid #ddd;
-            font-style: italic;
-        }
-        
-        #quote em {
-            font-style: normal;
-            font-weight: bold;
-        }
-        
-        #quote cite {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #666;
-        }
-        
-        @media screen and (max-width: 768px) {
-            body {
-                padding: 20px;
-                margin: 0;
-            }
+section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    scroll-margin-top: 130px;
+}
 
-            .img-container img {
-                margin-top: 30px;
-                width: 75%;
-                height:auto;
-            }
+#Shirts {
+    margin-bottom: 100px;
+}
 
-            nav {
-                padding: 10px;
-                flex-direction: row;
-                align-items: flex-start;
-                position: fixed;
-                top: 0;
-                left: 0;
-            }
+.hits-albums-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
-            .nav-bar-content {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-        
-            .nav-bar-content ul {
-                flex-direction: row;
-                align-items: flex-start;
-                margin-top: 10px;
-            }
-        
-            .nav-bar-content li a {
-                padding: 8px 0;
-            }
-        
-            nav a {
-                padding: 5px;
-            }
-        
-            ul {
-                flex-direction: flex;
-                align-items: flex-start;
-                margin-top: 0;
-            }
-        
-            li {
-                margin: 5px;
-            }
-        
-            .container {
-                width: 100%;
-                padding: 10px;
-                margin-top: 120px;
-            }
-            
-        }
-        
+.shirts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 250px;
+    box-sizing: border-box;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.product .album-name {
+    margin-bottom: 20px;
+}
+
+.product .btn {
+    padding: 10px 20px;
+    background-color: #d7272f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.product .btn:hover {
+    background-color: #bf222a;
+}
+
+#quote {
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 5px solid #ddd;
+    font-style: italic;
+}
+
+#quote em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+#quote cite {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+        margin: 0;
+    }
+
+    .img-container img {
+        margin-top: 30px;
+        width: 75%;
+        height: auto;
+    }
+
+    nav {
+        padding: 10px;
+        flex-direction: row;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .nav-bar-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .nav-bar-content ul {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+
+    .nav-bar-content li a {
+        padding: 8px 0;
+    }
+
+    nav a {
+        padding: 5px;
+    }
+
+    ul {
+        flex-direction: flex;
+        align-items: flex-start;
+        margin-top: 0;
+    }
+
+    li {
+        margin: 5px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+        margin-top: 120px;
+    }
+
+}

@@ -1,3 +1,28 @@
+<?php
+// session_start();
+
+function hitungHargaTotal($productType, $productName) {
+    $prices = [
+        'album' => 150000,
+        'shirt' => 200000
+    ];
+    return $prices[$productType] ?? 0; // Default to 0 if product type not found
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $productType = $_POST["product_type"] ?? null;
+    $productName = $_POST["product_name"] ?? null;
+
+    if ($productType && $productName) {
+        $total = hitungHargaTotal($productType, $productName);
+    } else {
+        $error = "Invalid request: missing product information.";
+    }
+} else {
+    $error = "Invalid request method.";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,35 +39,28 @@
 <div class="container">
     <h2>Checkout</h2>
     <?php
-    function hitungHargaTotal($albums)
-    {
-        $total = 0;
-        foreach ($albums as $album) {
-            $total += 150000;
-        }
-        return $total;
-    }
+    if (isset($error)) {
+        echo "<p>$error</p>";
+    } elseif (isset($productType) && isset($productName)) {
+        echo "<p>Thank you for purchasing $productName!</p>";
+        echo "<p>Total harga: Rp. " . number_format($total, 0, ',', '.') . "</p>";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $album = $_POST["album"];
-        $albums = [$album];
-        $total = hitungHargaTotal($albums);
-        echo "<p>Thank you for purchasing $album!</p>";
-        echo "<p>Total harga: Rp. {$total}</p>";
-        echo "<p>List Lagu :</p>";
-        switch ($album) {
-            case "Terbaik Terbaik":
-                echo '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/0QtVlnrFMVFDTFg1NYtDOT?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>';
-                break;
-            case "Bintang Lima":
-                echo '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3LRdN6TlxSk6DJqpSWwdFQ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>';
-                break;
-            case "Laskar Cinta":
-                echo '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3JF2TLCAfnfGe7uahgIeWE?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>';
-                break;
-            case "Format Masa Depan":
-                echo '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4eEU7HKuOnfbovQM9mISBy?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>';
-                break;
+        if ($productType == 'album') {
+            echo "<p>List Lagu</p>";
+            switch ($productName) {
+                case "Terbaik Terbaik":
+                    echo '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/0QtVlnrFMVFDTFg1NYtDOT?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>';
+                    break;
+                case "Bintang Lima":
+                    echo '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3LRdN6TlxSk6DJqpSWwdFQ?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>';
+                    break;
+                case "Laskar Cinta":
+                    echo '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3JF2TLCAfnfGe7uahgIeWE?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>';
+                    break;
+                case "Format Masa Depan":
+                    echo '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4eEU7HKuOnfbovQM9mISBy?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>';
+                    break;
+            }
         }
     } else {
         echo "<p>Invalid request.</p>";

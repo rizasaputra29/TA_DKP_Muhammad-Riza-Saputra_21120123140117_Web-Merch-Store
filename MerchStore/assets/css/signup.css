@@ -1,152 +1,152 @@
-    html, body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-    }
-    
-    body {
-        background-image: url(https://static.vecteezy.com/system/resources/previews/022/178/666/original/monochrome-red-pattern-megamendung-batik-cirebon-free-vector.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
 
-    .img-container {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
+body {
+    background-image: url(https://static.vecteezy.com/system/resources/previews/022/178/666/original/monochrome-red-pattern-megamendung-batik-cirebon-free-vector.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    .img-container img {
-        width: 30%;
-        display: flex;
-        justify-content: center;
-    }
+.img-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 
-    header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #333;
-        padding: 10px 0;
-    }
-    
-    #nav-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 80%;
-    }
-    
-    #header-img {
-        width: 50px;
-        height: auto;
-    }
-    
-    .nav-bar-content ul {
-        list-style-type: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .nav-bar-content li {
-        margin: 0 10px;
-    }
-    
-    .nav-bar-content a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-    }
-    
-    .nav-bar-content a:hover {
-        text-decoration: underline;
-    }
-    
-    .container {
-        width: 100%;
-        margin: auto;
-        padding: 20px;
-        position: relative;
-        top: 80px;
-    }
-    
+.img-container img {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+#nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+#header-img {
+    width: 50px;
+    height: auto;
+}
+
+.nav-bar-content ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar-content li {
+    margin: 0 10px;
+}
+
+.nav-bar-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-bar-content a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    top: 80px;
+}
+
+.auth-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.auth-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.auth-container input[type="submit"] {
+    width: 85%;
+    padding: 12px;
+    background-color: #d7272f;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-container input[type="submit"]:hover {
+    background-color: #bf222a;
+}
+
+.auth-container p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
     .auth-container {
-        max-width: 400px;
-        margin: 100px auto;
-        padding: 30px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
+        width: 80%;
+        padding: 20px;
     }
-    
-    .auth-container h2 {
-        margin-bottom: 20px;
-        font-size: 28px;
-        color: #333;
-    }
-    
-    .auth-container label {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 16px;
-        color: #333;
-    }
-    
-    .auth-container input[type="text"],
-    .auth-container input[type="password"] {
-        width: 90%;
-        padding: 12px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-    }
-    
-    .auth-container input[type="submit"] {
-        width: 100%;
-        padding: 12px;
-        background-color: #d7272f;
-        border: none;
-        border-radius: 4px;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    
-    .auth-container input[type="submit"]:hover {
-        background-color: #bf222a;
-    }
-    
-    .auth-container p {
-        margin-top: 20px;
-        font-size: 14px;
-        color: #333;
-    }
-    
-    .success-message {
-        color: green;
-        font-weight: bold;
-        margin-bottom: 10px;
-        padding: 10px;
-        background-color: #d4edda;
-        border: 1px solid #c3e6cb;
-        border-radius: 4px;
-    }
-
-    @media screen and (max-width: 768px) {
-        .auth-container {
-            width: 100%;
-            padding: 20px;
-        }
-    }
+}

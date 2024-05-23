@@ -73,67 +73,7 @@
             <h2>Hits Albums</h2>
             <div class="hits-albums-container">
                 <?php
-
-            class Album {
-                public $name;
-                public $src;
-                public $price;
-
-                public function __construct($name, $src, $price) {
-                    $this->name = $name;
-                    $this->src = $src;
-                    $this->price = $price;
-                }
-            }
-
-            class Queue {
-                private $items = [];
-
-                public function enqueue($item) {
-                    $this->items[] = $item;
-                }
-
-                public function dequeue() {
-                    return array_shift($this->items);
-                }
-
-                public function isEmpty() {
-                    return empty($this->items);
-                }
-
-                public function peek() {
-                    return $this->items[0] ?? null;
-                }
-            }
-
-            $albumQueue = new Queue();
-            $albumQueue->enqueue(new Album("Terbaik Terbaik", "assets/img/terbaik.jpeg", "Rp. 150.000"));
-            $albumQueue->enqueue(new Album("Bintang Lima", "assets/img/bintang lima.png", "Rp. 150.000"));
-            $albumQueue->enqueue(new Album("Laskar Cinta", "assets/img/laskar cinta.png", "Rp. 150.000"));
-            $albumQueue->enqueue(new Album("Format Masa Depan", "assets/img/format masa.png", "Rp. 150.000"));
-
-            while (!$albumQueue->isEmpty()) {
-                $album = $albumQueue->dequeue();
-                echo "<div class='product'>";
-                echo "<div class='album-name'>";
-                echo "<h2>{$album->name}</h2>";
-                echo "</div>";
-                echo "<img src='{$album->src}' width='200' height='200'>";
-                echo "<h2>{$album->price}</h2>";
-                echo "<form method='post' action='checkout.php'>";
-                echo "<input type='hidden' name='album' value='{$album->name}'>";
-                echo "<button type='submit' class='btn'>Buy Now</button>";
-                echo "</form>";
-                echo "</div>";
-            }
-            ?>
-        </section>
-
-        <section id="Shirts">
-            <h2>Shirts</h2>
-            <div class="shirts-container">
-                <?php
-        class Shirt {
+        class Album {
             public $name;
             public $src;
             public $price;
@@ -145,28 +85,101 @@
             }
         }
 
-        $shirtQueue = new Queue();
-        $shirtQueue->enqueue(new Shirt("Terbaik Terbaik", "assets/img/baju terbaik.png", "Rp. 120.000"));
-        $shirtQueue->enqueue(new Shirt("Bintang Lima", "assets/img/baju bintang lima.png", "Rp. 150.000"));
-        $shirtQueue->enqueue(new Shirt("Laskar Cinta", "assets/img/baju laskar cinta.png", "Rp. 100.000"));
-        $shirtQueue->enqueue(new Shirt("Format Masa Depan", "assets/img/baju format.png", "Rp. 100.000"));
+        class Queue {
+            private $items = [];
 
+            public function enqueue($item) {
+                $this->items[] = $item;
+            }
+
+            public function dequeue() {
+                return array_shift($this->items);
+            }
+
+            public function isEmpty() {
+                return empty($this->items);
+            }
+        }
+
+        $albumQueue = new Queue();
+        $albumQueue->enqueue(new Album("Terbaik Terbaik", "assets/img/terbaik.jpeg", "Rp. 150.000"));
+        $albumQueue->enqueue(new Album("Bintang Lima", "assets/img/bintang lima.png", "Rp. 150.000"));
+        $albumQueue->enqueue(new Album("Laskar Cinta", "assets/img/laskar cinta.png", "Rp. 150.000"));
+        $albumQueue->enqueue(new Album("Format Masa Depan", "assets/img/format masa.png", "Rp. 150.000"));
+
+        while (!$albumQueue->isEmpty()) {
+            $album = $albumQueue->dequeue();
+            echo "<div class='product'>";
+            echo "<div class='album-name'>";
+            echo "<h2>{$album->name}</h2>";
+            echo "</div>";
+            echo "<img src='{$album->src}''>";
+            echo "<h2>{$album->price}</h2>";
+            echo "<form method='post' action='checkout.php'>";
+            echo "<input type='hidden' name='product_type' value='album'>";
+            echo "<input type='hidden' name='product_name' value='{$album->name}'>";
+            echo "<button type='submit' class='btn'>Buy Now</button>";
+            echo "</form>";
+            echo "</div>";
+        }
+            ?>
+        </section>
+
+        <section id="Shirts">
+            <h2>Shirts</h2>
+            <div class="shirts-container">
+                <?php
+        class Shirt {
+            public $name;
+            public $src;
+            public $price;
+        
+            public function __construct($name, $src, $price) {
+                $this->name = $name;
+                $this->src = $src;
+                $this->price = $price;
+            }
+        }
+        
+        class Load {
+            private $items = [];
+        
+            public function enqueue($item) {
+                $this->items[] = $item;
+            }
+        
+            public function dequeue() {
+                return array_shift($this->items);
+            }
+        
+            public function isEmpty() {
+                return empty($this->items);
+            }
+        }
+        
+        $shirtQueue = new Load();
+        $shirtQueue->enqueue(new Shirt("Terbaik Terbaik", "assets/img/baju terbaik.png", "Rp. 200.000"));
+        $shirtQueue->enqueue(new Shirt("Bintang Lima", "assets/img/baju bintang lima.png", "Rp. 200.000"));
+        $shirtQueue->enqueue(new Shirt("Laskar Cinta", "assets/img/baju laskar cinta.png", "Rp. 200.000"));
+        $shirtQueue->enqueue(new Shirt("Format Masa Depan", "assets/img/baju format.png", "Rp. 200.000"));
+        
         while (!$shirtQueue->isEmpty()) {
             $shirt = $shirtQueue->dequeue();
             echo "<div class='product'>";
             echo "<div class='shirt-name'>";
             echo "<h2>{$shirt->name}</h2>";
             echo "</div>";
-            echo "<img src='{$shirt->src}'>";
+            echo "<img src='{$shirt->src}' alt='{$shirt->name}'>";
             echo "<div class='product-details'>";
             echo "<h2>{$shirt->price}</h2>";
             echo "<form method='post' action='checkout.php'>";
-            echo "<input type='hidden' name='shirt' value='{$shirt->name}'>";
+            echo "<input type='hidden' name='product_type' value='shirt'>";
+            echo "<input type='hidden' name='product_name' value='{$shirt->name}'>";
             echo "<button type='submit' class='btn'>Buy Now</button>";
             echo "</form>";
             echo "</div>";
             echo "</div>";
-        }
+        }        
         ?>
             </div>
         </section>
