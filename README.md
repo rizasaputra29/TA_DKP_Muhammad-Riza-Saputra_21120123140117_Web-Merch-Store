@@ -1,6 +1,6 @@
-WEBSITE MERCHANDISE STORE DEWA19
+Website Merchandise Store Dewa19
 ------
-Ini adalah Website untuk Tugas Akhir Praktikum Dasar Komputer dan Pemrograman saya. Website ini berfungsi untuk para Baladewa yang ingin membeli CD Album Dewa19 dan juga membeli Merch Kaos Dewa19 Official.
+Ini adalah Website untuk Tugas Akhir Praktikum Dasar Komputer dan Pemrograman saya. Website ini berfungsi untuk para Baladewa (Fans Dewa19) yang ingin membeli CD Album Dewa19 dan Merch Kaos Dewa19 Official.
 
 Nama : Muhammad Riza Saputra
 
