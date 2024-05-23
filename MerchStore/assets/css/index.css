@@ -3,6 +3,7 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
         
 html, body {
@@ -21,7 +22,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 0;
+    padding: 14px 20px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -57,10 +58,11 @@ nav {
     justify-content: center;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 10px 15px;
     text-decoration: none;
     position: relative;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-bar-content li a:hover {
@@ -102,29 +104,41 @@ nav {
         }
         
         section {
-            margin: 20px;
-        }
-        
-        section:target {
+            margin-top: 50px;
+            margin-bottom: 50px;
             scroll-margin-top: 130px;
         }
-        
-        iframe {
-            margin: 5px;
+
+        #Shirts {
+            margin-bottom: 100px;
+        }
+
+        .hits-albums-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .shirts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .product {
-            display: flex;
+            display: inline-block;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            margin: 10px;
+            padding: 10px;
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            width: 250px;
+            box-sizing: border-box;
         }
         
         .product:hover {
@@ -133,8 +147,17 @@ nav {
         }
         
         .product img {
-            max-width: 100%;
-            height: auto;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
         
         .product .album-name {
@@ -148,7 +171,7 @@ nav {
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            margin-top: 20px;
+            margin: 5px;
             transition: background-color 0.3s ease;
         }
         
@@ -175,14 +198,39 @@ nav {
         }
         
         @media screen and (max-width: 768px) {
+            body {
+                padding: 20px;
+                margin: 0;
+            }
+
             .img-container img {
                 margin-top: 30px;
-                width: 100%;
+                width: 75%;
                 height:auto;
             }
 
             nav {
-                padding: 5px;
+                padding: 10px;
+                flex-direction: row;
+                align-items: flex-start;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            .nav-bar-content {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        
+            .nav-bar-content ul {
+                flex-direction: row;
+                align-items: flex-start;
+                margin-top: 10px;
+            }
+        
+            .nav-bar-content li a {
+                padding: 8px 0;
             }
         
             nav a {
@@ -202,7 +250,7 @@ nav {
             .container {
                 width: 100%;
                 padding: 10px;
-                margin-top: 30px;
+                margin-top: 120px;
             }
             
         }

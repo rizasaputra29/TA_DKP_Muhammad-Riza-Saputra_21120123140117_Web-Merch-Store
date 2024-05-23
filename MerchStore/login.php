@@ -3,7 +3,6 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
-
     if ($username == 'admin' && $password == 'admin123') {
         $_SESSION['username'] = $username;
         header('Location: index.php');
@@ -13,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,24 +22,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="stylesheet" type="text/css" href="assets/css/login.css" >
+    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
 </head>
 <body>
-    <div class="auth-container">
-        <div class="img-container" >
-            <img src="assets/img/logo dewa 1.png" >
-        </div>
-        <h2>Login Dewa19 Page</h2>
-        <form method="post" action="login.php">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <input type="submit" name="submit" value="Login">
-        </form>
-        <p>Don't have an account? <a href="signup.php">Sign up</a></p>
+<div class="auth-container">
+    <div class="img-container">
+        <img src="assets/img/logo dewa 1.png">
     </div>
+    <h2>Login Dewa19 Page</h2>
+    <?php if (isset($error)) { ?>
+        <div class="error-message"><?php echo $error; ?></div>
+    <?php } ?>
+    <form method="post" action="login.php">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required placeholder="Masukkan username Anda">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="Masukkan password Anda">
+        <input type="submit" name="submit" value="Login">
+    </form>
+    <p>Don't have an account? <a href="signup.php">Sign up</a></p>
+</div>
 </body>
-</html> 
+</html>
