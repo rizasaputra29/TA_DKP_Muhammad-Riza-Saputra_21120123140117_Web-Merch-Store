@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<p>Total harga: Rp. " . number_format($total, 0, ',', '.') . "</p>";
 
         if ($productType == 'album') {
-            echo "<p>List Lagu</p>";
+            echo "<p>List Lagu :</p>";
             switch ($productName) {
                 case "Terbaik Terbaik":
                     echo '<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/0QtVlnrFMVFDTFg1NYtDOT?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>';
