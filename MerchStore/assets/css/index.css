@@ -119,6 +119,10 @@ section {
     justify-content: center;
 }
 
+.img-album img {
+    border-radius: 10px;
+}
+
 .shirts-container {
     display: flex;
     flex-wrap: wrap;

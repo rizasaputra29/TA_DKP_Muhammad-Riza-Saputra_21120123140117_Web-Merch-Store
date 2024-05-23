@@ -113,7 +113,9 @@
             echo "<div class='album-name'>";
             echo "<h2>{$album->name}</h2>";
             echo "</div>";
+            echo "<div class='img-album'>";
             echo "<img src='{$album->src}''>";
+            echo "</div>";
             echo "<h2>{$album->price}</h2>";
             echo "<form method='post' action='checkout.php'>";
             echo "<input type='hidden' name='product_type' value='album'>";
