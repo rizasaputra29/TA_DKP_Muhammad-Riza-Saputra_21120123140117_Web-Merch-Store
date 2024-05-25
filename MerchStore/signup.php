@@ -4,7 +4,13 @@ $message = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $message = "Registration successful for user : $username";
+    $confirm_password = $_POST['confirm_password'];
+
+    if ($password !== $confirm_password) {
+        $message = "Passwords do not match.";
+    } else {
+        $message = "Registration successful for user : $username";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -22,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <div class="auth-container">
     <div class="img-container">
-        <img src="assets/img/logo dewa 1.png">
+        <img src="assets/img/logo dewa 1.png" alt="Dewa19 Logo">
     </div>
     <h2>Sign Up Dewa19 Page</h2>
     <form method="post" action="signup.php">
@@ -30,10 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" id="username" name="username" required placeholder="Masukkan username Anda">
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required placeholder="Masukkan password Anda">
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required placeholder="Konfirmasi password Anda">
         <input type="submit" value="Sign Up">
     </form>
     <?php if (!empty($message)) { ?>
-        <p class="success-message"><?php echo $message; ?></p>
+        <p class="<?php echo ($message === 'Passwords do not match.') ? 'error-message' : 'success-message'; ?>">
+            <?php echo $message; ?>
+        </p>
     <?php } ?>
     <p>Already have an account? <a href="login.php">Login</a></p>
 </div>
